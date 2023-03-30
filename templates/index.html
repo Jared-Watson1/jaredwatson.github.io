@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical AI Assistant</title>
+    <link rel="stylesheet" href="static/index.css">
+</head>
+<body>
+    <h1>Medical AI Assistant</h1>
+    <p>Type your question below:</p>
+    <form method="POST" action="{{ url_for('index') }}">
+        <input type="text" name="question" placeholder="Enter your question..." required>
+        <button type="submit">Ask</button>
+    </form>
+    {% if answer %}
+    <div id="output">
+        <strong>Q:</strong> {{ question }}<br>
+        <strong>A:</strong> {{ answer }}
+    </div>
+    {% endif %}
+</body>
+</html>
